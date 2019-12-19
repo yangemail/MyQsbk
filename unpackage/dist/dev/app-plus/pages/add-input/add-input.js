@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"uni-textarea { border: ",[0,1]," solid #EEE; }\n.",[1],"gonggao{ width:",[0,500],"; display: block; background-color: #fff; padding: 15px; font-size: 14px; border-radius: 2%; }\n.",[1],"gonggao wx-image{ width: 85%; border: none; }\n.",[1],"gonggao wx-button{ margin-top: ",[0,20],"; background: #FFE934; color: #171606; }\n",],undefined,{path:"./pages/add-input/add-input.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/add-input/add-input.wxml') } }));
