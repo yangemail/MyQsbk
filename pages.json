@@ -1,0 +1,136 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"app-plus": {
+					"scrollIndicator": "none", // 隐藏滚动条
+					"bounce": "none", // 关闭Android端的反弹效果
+					"titleNView": { // 导航栏
+						// 搜索框配置
+						"searchInput": { // 搜索框
+							"align": "center", //文字居中显示
+							"backgroundColor": "#F7F7F7", //搜索框背景颜色
+							"borderRadius": "4px", // 搜索框圆角
+							"placeholder": "搜索糗事", //搜索框提示文本
+							"placeholderColor": "#CCC", // 搜索框提示文字颜色
+							"disabled": true // 本控件不提供搜索功能，直接跳转到搜索页面就可以了
+						},
+						// 配置按钮
+						"buttons": [
+							//左边按钮
+							{
+								"color": "#FF9619", // 按钮颜色
+								"colorPressed": "#BBB", // 按钮按下颜色
+								"float": "left", //按钮显示在左边
+								"fontSize": "22px", //按钮上文字显示大小
+								"fontSrc": "/static/font/icon.ttf", // 按钮文字文件路径
+								"text": "\ue609" // 按钮文字
+							},
+							//右边按钮
+							{
+								"color": "#000",
+								"colorPressed": "#BBB",
+								"float": "right",
+								"fontSize": "22px",
+								"fontSrc": "/static/font/icon.ttf",
+								"text": "\ue653"
+							}
+						]
+					}
+				}
+			}
+		}, {
+			"path": "pages/news/news",
+			"style": {
+				"app-plus":{
+					"titleNView":false // 禁止原生导航
+				}
+			}
+		}, {
+			"path": "pages/paper/paper",
+			"style": {}
+		}, {
+			"path": "pages/home/home",
+			"style": {}
+		}
+
+		, {
+			"path": "pages/search/search",
+			"style": {
+				"app-plus": {
+					"scrollIndicator": "none", // 隐藏滚动条
+					"bounce": "none", // 关闭Android端的反弹效果
+					"titleNView": { // 导航栏
+						"autoBackButton": false,
+						// 搜索框配置
+						"searchInput": { // 搜索框
+							"align": "left", //文字居中显示
+							"backgroundColor": "#F7F7F7", //搜索框背景颜色
+							"borderRadius": "4px", // 搜索框圆角
+							"placeholder": "搜索糗事", //搜索框提示文本
+							"placeholderColor": "#CCC", // 搜索框提示文字颜色
+							"disabled": false // 本控件不提供搜索功能，直接跳转到搜索页面就可以了
+						},
+						// 配置按钮
+						"buttons": [
+							//右边按钮
+							{
+								"color": "#000",
+								"colorPressed": "#BBB",
+								"float": "right",
+								"fontSize": "16px",
+								"text": "取消"
+							}
+						]
+					}
+				}
+			}
+		}, {
+			"path": "pages/add-input/add-input",
+			"style": {
+				"app-plus": {
+					"titleNView": false // 禁止原生导航
+				}
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "仿糗事百科", 
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
+	},
+	// 底部导航
+	"tabBar": {
+		"color": "#ADADAD",
+		"selectedColor": "#FEE42A",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "糗事",
+				"iconPath": "static/tabbar/index.png",
+				"selectedIconPath": "static/tabbar/indexed.png"
+			},
+			{
+				"pagePath": "pages/news/news",
+				"text": "动态",
+				"iconPath": "static/tabbar/news.png",
+				"selectedIconPath": "static/tabbar/newsed.png"
+			},
+			{
+				"pagePath": "pages/paper/paper",
+				"text": "小纸条",
+				"iconPath": "static/tabbar/paper.png",
+				"selectedIconPath": "static/tabbar/papered.png"
+			},
+			{
+				"pagePath": "pages/home/home",
+				"text": "我的",
+				"iconPath": "static/tabbar/home.png",
+				"selectedIconPath": "static/tabbar/homeed.png"
+			}
+		]
+	}
+}
