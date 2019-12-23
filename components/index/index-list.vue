@@ -65,19 +65,23 @@
 			},
 			// 顶踩
 			caozuo(type) {
-				switch(type) {
+				switch (type) {
 					case "ding":
-						if(this.infonum.index == 1) {return;}
+						if (this.infonum.index == 1) {
+							return;
+						}
 						this.infonum.dingnum++;
-						if(this.infonum.index == 2) {
+						if (this.infonum.index == 2) {
 							this.infonum.cainum--;
 						}
 						this.infonum.index = 1;
 						break;
 					case "cai":
-						if(this.infonum.index == 2) {return;}
+						if (this.infonum.index == 2) {
+							return;
+						}
 						this.infonum.cainum++;
-						if(this.infonum.index == 1) {
+						if (this.infonum.index == 1) {
 							this.infonum.dingnum--;
 						}
 						this.infonum.index = 2;

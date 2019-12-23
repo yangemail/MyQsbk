@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<!-- 自定义导航栏 -->
-		<uni-nav-bar :statusBar="true" @clickRight="openAdd">
+		<uniNavBar :statusBar="true" @clickRight="openAdd">
 			<!-- 左边 -->
 			<block slot="left">
 				<view class="nav-left">
@@ -23,7 +23,7 @@
 					<view class="icon iconfont icon-bianji1"></view>
 				</view>
 			</block>
-		</uni-nav-bar>
+		</uniNavBar>
 	</view>
 </template>
 
@@ -51,6 +51,7 @@
 				});
 			},
 			changeTab(index) {
+				console.log("changeTab(index) >> " + index);
 				this.tabIndex = index;
 			},
 		},

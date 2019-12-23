@@ -53,6 +53,5 @@
 		border-radius: 20upx;
 		width: 70upx;
 		margin: auto;
-
 	}
 </style>

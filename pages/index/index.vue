@@ -7,6 +7,7 @@
 			<swiper class="swiper-box" :style="{height: swiperheight+'px'}" :current="tabIndex" @change="tabChange">
 				<swiper-item v-for="(items, index1) in newslist" :key="index1">
 					<scroll-view scroll-y class="list" @scrolltolower="loadmore(index1)">
+						
 						<template v-if="items.list.length>0">
 							<!-- 图文列表 -->
 							<block v-for="(item, index2) in items.list" :key="index2">
@@ -19,6 +20,7 @@
 							<!-- 无内容 -->
 							<nothing/>
 						</template>
+						
 					</scroll-view>
 				</swiper-item>
 			</swiper>
@@ -27,8 +29,8 @@
 </template>
 
 <script>
-	import indexList from '../../components/index/index-list.vue';
 	import swiperTabHead from '../../components/index/swiper-tab-head.vue';
+	import indexList from '../../components/index/index-list.vue';
 	import loadMore from '../../components/common/load-more.vue';
 	import nothing from '../../components/common/no-thing.vue';
 
@@ -298,6 +300,7 @@
 		},
 		// 监听原生标题导航按钮点击事件
 		onNavigationBarButtonTap(e) {
+			console.log("Called onNavigationBarButtonTap(e) >> " + e.index)
 			switch(e.index) {
 				// 打开发布页面
 				case 1:
@@ -311,11 +314,13 @@
 		methods: {
 			// tabbar点击事件
 			tabtap(index) {
-				console.log("$$$(index) -> " + index);
+				console.log("$$$tabtap(index) -> " + index);
 				this.tabIndex = index;
 			},
 			// swiper滑动事件
 			tabChange(e) {
+				// tabChange为事件，随着tab的改变而改变。e.detail>>0, touch; e.detail>>1, touch
+				console.log("e.detail >>> " + e.detail.current + "," + e.detail.source)
 				this.tabIndex = e.detail.current;
 			},
 			// 上拉加载事件
@@ -348,7 +353,7 @@
 					this.newslist[index].list.push(obj);
 					this.newslist[index].loadtext = "上拉加载更多";
 				}, 1000);
-				this.newslist[index].loadtext = "没有更多数据了";
+				this.newslist[index].loadtext = "没有更多数据了 - 666测试数据";
 			},
 		}
 	}
